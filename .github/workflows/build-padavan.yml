@@ -38,7 +38,7 @@ jobs:
         mkdir -p /opt/images/
     - name: Build Firmware
       env:
-        TNAME: K2P_nano
+        TNAME: RM2100
       run: |
         cd /opt/rt-n56u/trunk
         if [ ! -f configs/templates/$TNAME.config ] ; then
@@ -85,7 +85,7 @@ jobs:
         echo "CONFIG_FIRMWARE_INCLUDE_TTYD=y" >> .config #ttyd
         echo "CONFIG_FIRMWARE_INCLUDE_IPERF3=y" >> .config #iperf3
         ##内网穿透服务##
-        #echo "CONFIG_FIRMWARE_INCLUDE_ALDRIVER=n" >> .config  #ALDRIVER  ~3m
+        echo "CONFIG_FIRMWARE_INCLUDE_ADGUARDHOME=y" >> .config  #ALDRIVER  ~3m
         #echo "CONFIG_FIRMWARE_INCLUDE_MENTOHUST=n" >> .config #mentohust
 
         #########################################################################################
