@@ -78,12 +78,12 @@ jobs:
 
 
         ##内网穿透服务##
-        echo "CONFIG_FIRMWARE_INCLUDE_ZEROTIER=y" >> .config #zerotier ~1.3M
-        echo "CONFIG_FIRMWARE_INCLUDE_ALIDDNS=y" >> .config #aliddns
+        #echo "CONFIG_FIRMWARE_INCLUDE_ZEROTIER=y" >> .config #zerotier ~1.3M
+        #echo "CONFIG_FIRMWARE_INCLUDE_ALIDDNS=y" >> .config #aliddns
         echo "CONFIG_FIRMWARE_INCLUDE_WIREGUARD=y" >> .config #wirguard
-        echo "CONFIG_FIRMWARE_INCLUDE_SMARTDNS=y" >> .config #smartdns
-        echo "CONFIG_FIRMWARE_INCLUDE_TTYD=y" >> .config #ttyd
-        echo "CONFIG_FIRMWARE_INCLUDE_IPERF3=y" >> .config #iperf3
+        #echo "CONFIG_FIRMWARE_INCLUDE_SMARTDNS=y" >> .config #smartdns
+        #echo "CONFIG_FIRMWARE_INCLUDE_TTYD=y" >> .config #ttyd
+        #echo "CONFIG_FIRMWARE_INCLUDE_IPERF3=y" >> .config #iperf3
         ##内网穿透服务##
         #echo "CONFIG_FIRMWARE_INCLUDE_ADGUARDHOME=y" >> .config  #ALDRIVER  ~3m
         #echo "CONFIG_FIRMWARE_INCLUDE_MENTOHUST=n" >> .config #mentohust
