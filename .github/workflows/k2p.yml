@@ -45,12 +45,8 @@ jobs:
         echo "configs/templates/$TNAME.config not found "
         exit 1
         fi
-        #wget -O smartdns-Release35.tar.gz https://github.com/pymumu/smartdns/archive/refs/tags/Release35.tar.gz
-        #cp -f smartdns-Release35.tar.gz user/smartdns/
-        #sed -i 's/smartdns-Release33/smartdns-Release35/g' user/smartdns/Makefile
         cp -f configs/templates/$TNAME.config .config
         sed -i 's/CONFIG_FIRMWARE_INCLUDE_SRELAY=y/CONFIG_FIRMWARE_INCLUDE_SRELAY=n/g' .config
-        #sed -i 's/CONFIG_FIRMWARE_INCLUDE_HTOP=y/CONFIG_FIRMWARE_INCLUDE_HTOP=n/g' .config
         sed -i 's/CONFIG_FIRMWARE_INCLUDE_OPENSSL_EXE=n/CONFIG_FIRMWARE_INCLUDE_OPENSSL_EXE=y/g' .config
         ################################################################################################
         #因不同型号配置功能不一样，所以先把配置项删除，如果你自己要添加其他的，也要写上删除这一条，切记！！！
@@ -83,9 +79,8 @@ jobs:
         echo "CONFIG_FIRMWARE_INCLUDE_SMARTDNS=y" >> .config #smartdns
         echo "CONFIG_FIRMWARE_INCLUDE_TTYD=y" >> .config #ttyd
         echo "CONFIG_FIRMWARE_INCLUDE_IPERF3=y" >> .config #iperf3
-        ##内网穿透服务##
-        #echo "CONFIG_FIRMWARE_INCLUDE_ADGUARDHOME=y" >> .config  #ALDRIVER  ~3m
-        #echo "CONFIG_FIRMWARE_INCLUDE_MENTOHUST=n" >> .config #mentohust
+        echo "CONFIG_FIRMWARE_INCLUDE_SOCAT=y" >> .config #socat
+        echo "CONFIG_FIRMWARE_INCLUDE_FRPC=y" >> .config #frpc
 
         #########################################################################################
         #自定义添加其它功能请参考源码configs/templates/目录下的config文件。按照上面的格式添加即可
