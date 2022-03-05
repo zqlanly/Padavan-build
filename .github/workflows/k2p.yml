@@ -78,7 +78,7 @@ jobs:
         echo "CONFIG_FIRMWARE_INCLUDE_WIREGUARD=y" >> .config #wirguard
         echo "CONFIG_FIRMWARE_INCLUDE_SMARTDNS=y" >> .config #smartdns
         echo "CONFIG_FIRMWARE_INCLUDE_TTYD=y" >> .config #ttyd
-        echo "CONFIG_FIRMWARE_INCLUDE_IPERF3=y" >> .config #iperf3
+        #echo "CONFIG_FIRMWARE_INCLUDE_IPERF3=y" >> .config #iperf3
         #echo "CONFIG_FIRMWARE_INCLUDE_FRPC=y" >> .config #socat
         echo "CONFIG_FIRMWARE_INCLUDE_SQM=y" >> .config #SQM QOS
         #########################################################################################
