@@ -48,6 +48,7 @@ jobs:
         cp -f configs/templates/$TNAME.config .config
         git clone https://github.com/pymumu/smartdns.git user/smartdns/smartdns-ba282c8
         sed -i 's/CONFIG_FIRMWARE_INCLUDE_SRELAY=y/CONFIG_FIRMWARE_INCLUDE_SRELAY=n/g' .config
+        sed -i 's/CONFIG_FIRMWARE_INCLUDE_NFSD=n/CONFIG_FIRMWARE_INCLUDE_NFSD=y/g' .config
         sed -i 's/CONFIG_FIRMWARE_INCLUDE_NFSC=n/CONFIG_FIRMWARE_INCLUDE_NFSC=y/g' .config
         sed -i 's/CONFIG_FIRMWARE_INCLUDE_OPENSSL_EXE=n/CONFIG_FIRMWARE_INCLUDE_OPENSSL_EXE=y/g' .config
         ################################################################################################
@@ -80,8 +81,8 @@ jobs:
         echo "CONFIG_FIRMWARE_INCLUDE_WIREGUARD=y" >> .config #wirguard
         echo "CONFIG_FIRMWARE_INCLUDE_SMARTDNS=y" >> .config #smartdns
         echo "CONFIG_FIRMWARE_INCLUDE_TTYD=y" >> .config #ttyd
-        echo "CONFIG_FIRMWARE_INCLUDE_NFSD=y" >> .config #iperf3
-        echo "CONFIG_FIRMWARE_INCLUDE_NFSC=y" >> .config #socat
+        #echo "CONFIG_FIRMWARE_INCLUDE_NFSD=y" >> .config #iperf3
+        #echo "CONFIG_FIRMWARE_INCLUDE_NFSC=y" >> .config #socat
         echo "CONFIG_FIRMWARE_INCLUDE_SQM=y" >> .config #SQM QOS
         #########################################################################################
         #自定义添加其它功能请参考源码configs/templates/目录下的config文件。按照上面的格式添加即可
