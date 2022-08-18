@@ -40,16 +40,14 @@ jobs:
       env:
         TNAME: K2P_nano
       run: |
+        cd /opt/rt-n56u/trunk/user/smartdns
+        wget $(curl -s https://api.github.com/repos/pymumu/smartdns/releases/latest|egrep -o 'http.+.tarball.+[0-9]') -O smartdns.tar.gz && mkdir smartdns-ba282c8 && tar -xzvf smartdns.tar.gz -C smartdns-ba282c8 --strip-components 1
         cd /opt/rt-n56u/trunk
         if [ ! -f configs/templates/$TNAME.config ] ; then
         echo "configs/templates/$TNAME.config not found "
         exit 1
         fi
         cp -f configs/templates/$TNAME.config .config
-        #更新最新版smartdns
-        #git clone https://github.com/lalasou/socus.git smartss
-        #cp -rf smartss/* user/smartdns/
-        #cp -rf smartss/*.sh user/scripts/
         sed -i 's/CONFIG_FIRMWARE_INCLUDE_SRELAY=y/CONFIG_FIRMWARE_INCLUDE_SRELAY=n/g' .config
         #sed -i 's/CONFIG_FIRMWARE_INCLUDE_NFSD=n/CONFIG_FIRMWARE_INCLUDE_NFSD=y/g' .config
         #sed -i 's/CONFIG_FIRMWARE_INCLUDE_NFSC=n/CONFIG_FIRMWARE_INCLUDE_NFSC=y/g' .config
